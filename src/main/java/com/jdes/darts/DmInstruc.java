@@ -7,10 +7,14 @@ public class DmInstruc {
 	// if this only get's called when DmInstruc gets called then this is useless 
 	// I may need to move this to...
 	private static long t0 = System.currentTimeMillis();
+	
+	
+	
 
 	public static void main(String[] args) {
 		
 		// How do I instantiate a class within the main function in java?
+		
 		
 		start();
 		
@@ -18,7 +22,7 @@ public class DmInstruc {
 	}
 	
 	public static void instructions() {
-	      String greeting = "Welcome to Dart Math!\n"
+	      String greeting = "\nWelcome to Darts Math!\n"
 	      + "This program is designed to let you practice your mental\n"
 	      + "addition/subtraction so you don't make a fool\n"
 	      + "out of yourself come game time!\n"
@@ -42,7 +46,7 @@ public class DmInstruc {
 	public static void start() {
 		Scanner scan = new Scanner(System.in);
 		
-		String optionz = "Welcome to Darts Math! What would you like to do? \n" 
+		String optionz = "\n Welcome to Darts Math! What would you like to do? \n" 
 				+ "1. Instructions \n"
 				+ "2. Play \n"
 				+ "3. See High Scores\n"
@@ -66,13 +70,15 @@ public class DmInstruc {
 			HighScore.writeJSON();
 			HighScore.printHS(); }
 		else if ( usrinp.matches(".*4.*") || usrinp.matches(".*skip.*") ) {
-			endd();}
+			endd();
+			}
 		
 		else if ( usrinp.matches(".*5.*") || usrinp.matches(".*clear.*") ) {
 			HighScore.resetHS();
 		}
 		else if ( usrinp.matches(".*6.*") || usrinp.matches(".*quit.*") ) {
-			endd();
+			System.out.println("\nBye Bye!");
+			System.exit(0);
 		}	
 		scan.close();
 			
@@ -83,7 +89,7 @@ public class DmInstruc {
 		
 		
 		String endOut = "\n"  
-				+ "You've gotten to 0! ... or a bit past that, but that's ok this isn't"
+				+ "You've gotten to 0! ... or a bit past that, but that's ok this isn't\n"
 				+ "real darts anyways!"
 				+ "\n";
 		
@@ -95,7 +101,7 @@ public class DmInstruc {
 		
 		// how do I get from long to int?
 		long t1 = System.currentTimeMillis();
-		long totalTimez = (t0 - t1) / 1000 ;
+		long totalTimez = (t1 - t0) / 1000 ;
 		// long to int conversion 
 		int totalTime = (int) totalTimez;
 		HighScore.putInList(totalTime);
@@ -123,14 +129,7 @@ public class DmInstruc {
 		}
 		scan.close();
 			
-//	    cont = input('''
-//
-//	    	    Would you like to continue?\n>''')
-//	    	    if cont.lower() in ['yes','y','yeah','mhm','yez']:
-//	    	        p1.throw_dart()
-//	    	    else:
-//	    	        print("BYE BYE!")
-//	    	        quit(0)
+
 		
 	}
 	

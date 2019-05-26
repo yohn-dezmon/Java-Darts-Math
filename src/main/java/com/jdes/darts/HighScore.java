@@ -18,11 +18,12 @@ public class HighScore {
 	
 	private static List<Integer> highScores = new ArrayList<Integer>();
 	private static String jsonList = gson.toJson(highScores);
-//	private static List<Integer> blankList = new ArrayList<Integer>();
+	private static List<Integer> blankList = new ArrayList<Integer>();
+	private static String jsonBlankList = gson.toJson(blankList);
 	
 	public static void putInList(int newScore) {
 		highScores.add(newScore);
-		Collections.sort(highScores, Collections.reverseOrder());
+		Collections.sort(highScores);
 	}
 	
 	public static void makeJSON() {
@@ -94,32 +95,34 @@ public class HighScore {
 	public static void resetHS() {
 		// i'm not sure if this replicates what I did in python
 		// revist json.dump(self.blank_list, outfile) if needed...
-		try {
-			BufferedReader br = new BufferedReader(new FileReader("/Users/HomeFolder/Desktop/DevPortfolio/Java/HighScores/dartsmath.txt"));
-			// should GsonPrac be Integer???
-			Type listType = new TypeToken<ArrayList<Integer>>(){}.getType();
-			List<Integer> highScorez = new Gson().fromJson(br, listType);
-			highScorez.clear();
-			highScores.clear();
-			highScores.addAll(highScorez);
-			DmInstruc.start();
-			
-			
-			
-			}
-		catch (IOException e) {
-			e.printStackTrace();
-		}
+	try {	
+		FileWriter fileWriter = new FileWriter("/Users/HomeFolder/Desktop/DevPortfolio/Java/HighScores/dartsmath.txt");
+		fileWriter.write(jsonBlankList);
+		fileWriter.close();
+		DmInstruc.start();
+		
 	}
+	catch (IOException e) { 
+		e.printStackTrace();
+	}
+	DmInstruc.start();
+	}
+		
+		
+
 	
 	public static void printHS() {
 		System.out.println("These are the TOP 10 high scores!");
+		Collections.sort(highScores);
 		// This saves teh top 10 high scores to a list... 
 		
-		ArrayList<Integer> subLi = new ArrayList<Integer>(highScores.subList(0,10));
-		for(int i=0;i < subLi.size(); i++) {
+//		ArrayList<Integer> subLi = new ArrayList<Integer>(highScores.subList(0,10));
+		
+		for(int i=0;i < highScores.size(); i++) {
 			int grower = i+1;
-			System.out.println(grower + ": " + subLi.get(i));
+			System.out.println(grower + ": " + highScores.get(i));
+			if ( grower == 10 ) {
+				DmInstruc.start(); }
 		}
 		DmInstruc.start();
 		
