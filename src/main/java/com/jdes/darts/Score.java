@@ -29,26 +29,25 @@ public class Score {
 	public static void subFromTotal(int SumScore) {
 		// before continuing, make sure you understand how to define a list! 
 		total.add(totalScore() - SumScore);
-		
-		System.out.println("Now what is your new total?");
+		int prevTotal = total.get(total.size() -2);
+		System.out.println("Now what is your new total?\n (hint: subtract from "+ prevTotal+")");
 		// user's guess at total 
 		int newTotal = scan.nextInt();
 		
 		while ( newTotal != currentScore() ) {
 			System.out.println("Try again!");
+			newTotal = scan.nextInt();
 		}
 		
 		if ( newTotal == currentScore() )
-			System.out.println("Correct! Your new total is: \n"+currentScore());
+			System.out.println("Correct!");
 			total.set(0, currentScore());
 			if ( total.get(0) <= 0 ) {
 				DmInstruc.endd(); 
 			}else {
-				String ah = "When asked for your total at the end of the next round,\n";
-				String beh = "subtract from ";
-				System.out.println(ah + beh + total.get(0));
+				DmInstruc.continu();
 			}
-			DmInstruc.continu();
+			
 				
 	}
 

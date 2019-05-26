@@ -121,11 +121,11 @@ public class DmInstruc {
 		
 		String usrinp = scan.nextLine().toLowerCase();
 		
-		if ( usrinp.matches(".*yes.*") ) {
+		if ( usrinp.matches(".*y.*") ) {
 			Play.throwDarts();
 		} else {
 			System.out.println("Bye Bye!");
-			endd();
+			System.exit(0);
 		}
 		scan.close();
 			

@@ -9,6 +9,9 @@ public class Play {
 
 	
 	public static void throwDarts() {
+		int currScore = Score.currentScore();
+		
+		System.out.println("Your current total is: " + currScore);
 		System.out.println("You throw three darts");
 		
 		int dart1 = (int)(Math.random()*60 + 1);
@@ -54,8 +57,7 @@ public class Play {
 			
 			
 		scan.close();
-			
-			
+						
 		}
 	}
 
