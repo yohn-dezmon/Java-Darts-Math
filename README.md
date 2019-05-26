@@ -12,4 +12,5 @@ Features of this project include:
 2. Storing the high scores in a JSON file  
 3. Each high score is calculated by the time that it takes you to complete the game.  
 4. Object Oriented Programming (although no inheritance within this program)  
-5. Java Exceptions   
+5. Java Exceptions  
+6. Dependencies/directory structure set up with Maven
