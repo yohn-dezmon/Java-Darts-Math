@@ -7,6 +7,9 @@ a game of Darts in a bar or elsewhere. Since my generation was raised using calc
 I wanted to give people a fun way of practicing mental math on their own before they 
 play Darts in public.    
 
+To run the project, open it in Eclipse, right click on the DmInstruc.java file and hit
+"Run as Java Application".
+
 Features of this project include:  
 1. User Input   
 2. Storing the high scores in a JSON file  
