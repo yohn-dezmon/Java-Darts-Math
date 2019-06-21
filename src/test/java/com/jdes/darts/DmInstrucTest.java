@@ -11,7 +11,7 @@ class DmInstrucTest {
 
 	@Test
 	void test1() {
-		DmInstruc instruc = mock(DmInstruc.class);
+		MainInstructions instruc = mock(MainInstructions.class);
 		doNothing().when(instruc).start();
 		
 		

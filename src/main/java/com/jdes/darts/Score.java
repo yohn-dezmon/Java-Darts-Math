@@ -7,8 +7,6 @@ import java.util.Scanner;
 
 public class Score {
 	
-	// adding static here allows this Scanner to be accessed throughout the methods
-	// in this class 
 	private static Scanner scan = new Scanner(System.in);
 	private static List<Integer> total = new ArrayList<Integer>() {{
 		add(300);
@@ -21,13 +19,12 @@ public class Score {
 	}
 	
 	public static int currentScore() {
-//		int currScore = total.get(total.size() - 1);
 		
 		return total.get(total.size() - 1);
 	}
 	
 	public static void subFromTotal(int SumScore) {
-		// before continuing, make sure you understand how to define a list! 
+		
 		total.add(totalScore() - SumScore);
 		int prevTotal = total.get(total.size() -2);
 		System.out.println("Now what is your new total?\n (hint: subtract from "+ prevTotal+")");
@@ -43,9 +40,9 @@ public class Score {
 			System.out.println("Correct!");
 			total.set(0, currentScore());
 			if ( total.get(0) <= 0 ) {
-				DmInstruc.endd(); 
+				MainInstructions.endd(); 
 			}else {
-				DmInstruc.continu();
+				MainInstructions.continu();
 			}
 			
 				

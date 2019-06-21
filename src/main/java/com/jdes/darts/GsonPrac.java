@@ -14,6 +14,7 @@ import com.google.gson.reflect.TypeToken;
 import com.google.gson.Gson;
 
 public class GsonPrac {
+// This class was just used to practice using GSON/JSON. 
 	
 	static Gson gson = new Gson();
 	private static List<Integer> highScores = new ArrayList<Integer>();
@@ -30,9 +31,7 @@ public class GsonPrac {
 		highScores.add(59); // 3
 		highScores.add(53); // 4
 		highScores.add(50); // 5
-		// How do I instantiate a class within the main function in java?
-//		Play p1 = new Play();
-//		Score player1 = new Score();
+
 		System.out.println("GOGOGO");
 		
 		String jsonList = gson.toJson(highScores);
@@ -53,18 +52,18 @@ public class GsonPrac {
 					fileWriter.close();
 					
 				} catch (IOException e) {
-			// What is printStackTrace?
+			
 					e.printStackTrace(); }
 			}
 			try {
 				BufferedReader br = new BufferedReader(new FileReader("/Users/HomeFolder/Desktop/DevPortfolio/Java/HighScores/dartsmath.txt"));
-				// should GsonPrac be Integer???
+				
 				Type listType = new TypeToken<ArrayList<Integer>>(){}.getType();
 				List<Integer> highScores = new Gson().fromJson(br, listType);
 //				GsonPrac instantiaton = gson.fromJson(br, GsonPrac.class);
 				System.out.println(highScores);
 				
-//				System.out.println(highScores);
+
 				
 				}
 			catch (IOException e) {

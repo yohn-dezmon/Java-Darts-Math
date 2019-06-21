@@ -3,9 +3,8 @@ package com.jdes.darts;
 import java.util.Scanner;
 import java.lang.System;
 
-public class DmInstruc {
-	// if this only get's called when DmInstruc gets called then this is useless 
-	// I may need to move this to...
+public class MainInstructions {
+	// used as a starting point in time
 	private static long t0 = System.currentTimeMillis();
 	
 	
@@ -13,9 +12,7 @@ public class DmInstruc {
 
 	public static void main(String[] args) {
 		
-		// How do I instantiate a class within the main function in java?
-		
-		
+		// starts the application/displays options to user
 		start();
 		
 
@@ -99,7 +96,7 @@ public class DmInstruc {
 		HighScore.makeJSON();
 		HighScore.writeJSON();
 		
-		// how do I get from long to int?
+		
 		long t1 = System.currentTimeMillis();
 		long totalTimez = (t1 - t0) / 1000 ;
 		// long to int conversion 

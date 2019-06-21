@@ -47,12 +47,6 @@ public class Play {
 		}
 		if ( guessSum == SumScore )
 			System.out.println("Correct!");
-			// I have player1 defined as an instantiation of the Score() class..
-			// How can I refer to it here?
-			// How can I refer to a class that is instantiated in the main method of a 
-			// package? 
-			// solution... singleton patterns?
-			// ACCESS THE METHOD/VARIABLE IN A STATIC WAY, I.E. NOT AS AN OBJECT
 			Score.subFromTotal(SumScore);
 			
 			

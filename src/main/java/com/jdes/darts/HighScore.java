@@ -40,7 +40,7 @@ public class HighScore {
 				fileWriter.close();
 				
 			} catch (IOException e) {
-		// What is printStackTrace?
+		
 				e.printStackTrace(); }
 			
 		}
@@ -61,7 +61,7 @@ public class HighScore {
 	public static void loadJSON() {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader("/Users/HomeFolder/Desktop/DevPortfolio/Java/HighScores/dartsmath.txt"));
-			// should GsonPrac be Integer???
+			
 			Type listType = new TypeToken<ArrayList<Integer>>(){}.getType();
 			List<Integer> highScorez = new Gson().fromJson(br, listType);
 			highScores.clear();
@@ -93,19 +93,18 @@ public class HighScore {
 		}
 	
 	public static void resetHS() {
-		// i'm not sure if this replicates what I did in python
-		// revist json.dump(self.blank_list, outfile) if needed...
+		
 	try {	
 		FileWriter fileWriter = new FileWriter("/Users/HomeFolder/Desktop/DevPortfolio/Java/HighScores/dartsmath.txt");
 		fileWriter.write(jsonBlankList);
 		fileWriter.close();
-		DmInstruc.start();
+		MainInstructions.start();
 		
 	}
 	catch (IOException e) { 
 		e.printStackTrace();
 	}
-	DmInstruc.start();
+	MainInstructions.start();
 	}
 		
 		
@@ -114,17 +113,15 @@ public class HighScore {
 	public static void printHS() {
 		System.out.println("These are the TOP 10 high scores!");
 		Collections.sort(highScores);
-		// This saves teh top 10 high scores to a list... 
 		
-//		ArrayList<Integer> subLi = new ArrayList<Integer>(highScores.subList(0,10));
 		
 		for(int i=0;i < highScores.size(); i++) {
 			int grower = i+1;
 			System.out.println(grower + ": " + highScores.get(i));
 			if ( grower == 10 ) {
-				DmInstruc.start(); }
+				MainInstructions.start(); }
 		}
-		DmInstruc.start();
+		MainInstructions.start();
 		
 		
 				
